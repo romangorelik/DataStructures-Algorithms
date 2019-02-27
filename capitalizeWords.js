@@ -3,7 +3,7 @@
 
 let capitalizeWords = (arr) => {
   let result = []
-  if (arr[0] === undefined) return
+  if (arr.length === 1) return [arr[0].toUpperCase()]
   result.push(arr[0].toUpperCase())
   return result = result.concat(capitalizeWords(arr.slice(1)))
 }
