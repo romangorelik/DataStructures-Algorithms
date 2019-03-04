@@ -35,4 +35,4 @@ let customSort = (arr) => {
   return results
 }
 
-console.log(customSort([1,2,2,3,4,5,5,10,0,0]))
+console.log(customSort([1,2,2,3,4,5,5,10,0,0,0,0,5]))
