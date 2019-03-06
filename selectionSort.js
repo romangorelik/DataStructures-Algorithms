@@ -18,3 +18,5 @@ let selectionSort = (arr) => {
   return arr
 }
 
+// Time complexity is O(n2).
+// Mostly should only be used if there is a limit on amount of swaps that can be made.
