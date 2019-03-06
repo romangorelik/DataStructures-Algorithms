@@ -19,3 +19,5 @@ let bubbleSort = (arr) => {
 }
 
 // Added a check to see if no swaps where made on the previous run, to short circuit the sorting.
+// Bubble sort is good for NEARLY SORTED LISTS.
+// Time complexity is O(n2) as worst case. But for nearly sorted it could be O(n).
