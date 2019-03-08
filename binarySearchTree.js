@@ -53,14 +53,69 @@ class BinarySearchTree {
 
     return false
   }
+
+  BFS() {
+    let data = [], queue = []
+    let node = this.root
+    queue.push(node)
+
+    while(queue.length) {
+      node = queue.shift()
+      data.push(node.value)
+      if (node.left) queue.push(node.left)
+      if (node.right) queue.push(node.right)
+    }
+
+    return data
+  }
+
+  DFSPreOrder() {
+    let data = []
+
+    let traverse = (node) => {
+      data.push(node.value)
+      if (node.left) traverse(node.left)
+      if (node.right) traverse(node.right)
+    }
+
+    traverse(this.root)
+    return data
+  }
+
+  DFSPostOrder() {
+    let data = []
+
+    let traverse = (node) => {
+      if (node.left) traverse(node.left)
+      if (node.right) traverse(node.right)
+      data.push(node.value)
+    }
+
+    traverse(this.root)
+    return data
+  }
+
+  DFSInOrder() {
+    let data = []
+
+    let traverse = (node) => {
+      if (node.left) traverse(node.left)
+      data.push(node.value)
+      if (node.right) traverse(node.right)
+    }
+
+    traverse(this.root)
+    return data
+  }
 }
 
 let tree = new BinarySearchTree()
 tree.root = new Node(10)
-tree.insert(5)
+tree.insert(6)
+tree.insert(15)
+tree.insert(3)
+tree.insert(8)
 tree.insert(20)
-tree.insert(16)
-tree.insert(7)
 
 // Insertion is O(log n)
 // Searching is O(log n)
